@@ -7,3 +7,9 @@
   margin-bottom: 4rem;
   width: 100%;
 }
+
+@media screen and (max-width: 400px) {
+  .transaction {
+    grid-template-columns: repeat(auto-fit, minmax(29.5rem, 1fr));
+  }
+}
