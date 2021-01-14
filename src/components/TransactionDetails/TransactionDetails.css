@@ -1,0 +1,9 @@
+.transaction {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 45.5rem);
+  grid-column-gap: 4.5rem;
+  grid-row-gap: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
