@@ -65,7 +65,10 @@ const TransactionCard: FC<CardProps> = (props) => {
             <span className="card__title">DomainName</span>: {DomainName}
           </p>
           <p>
-            <span className="card__title">URL</span>: {URL}
+            <span className="card__title">URL</span>:{" "}
+            <a href={URL} target="_blank" rel="noreferrer">
+              {URL}
+            </a>
           </p>
           <p>
             <span className="card__title">MacAddress</span>: {MacAddress}
