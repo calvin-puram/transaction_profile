@@ -1,5 +1,6 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![license](https://img.shields.io/github/license/t-ho/mern-stack)](https://gitlab.com/calvin-puram/product-store/-/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/t-ho/mern-stack)](https://github.com/calvin-puram/transaction_profile.git)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/600970e8-6254-44e5-999b-8e676868efde/deploy-status)](https://app.netlify.com/sites/transaction-profiles/deploys)
 
 ### React - Typescript
 
@@ -7,7 +8,7 @@
 
 ![Web App](./public/app.png)
 
-- Web app [demo](https://getproducts.netlify.app/)
+- Web app [demo](https://transaction-profiles.netlify.app/)
 
 ## Deployment
 
@@ -18,7 +19,7 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://gitlab.com/calvin-puram/product-store.git
+git clone https://github.com/calvin-puram/transaction_profile.git
 cd enye-frontend
 ```
 
