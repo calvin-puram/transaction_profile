@@ -128,7 +128,7 @@ function App() {
           totalCards={profiles.length}
           postPerPage={postPerPage}
           paginate={paginate}
-          activePage={activePage}
+//           activePage={activePage}
         />
       
     </div>
