@@ -13,10 +13,8 @@ import {
   searchFilter,
 } from "./helpers";
 
-import data from "./data";
-
 function App() {
-  const [profiles, setProfiles] = useState(data);
+  const [profiles, setProfiles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [activePage, setActivePage] = useState(1);
   const [postPerPage] = useState(20);
@@ -24,28 +22,32 @@ function App() {
   const [filterByGender, setfilterByGender] = useState("");
   const [search, setSearch] = useState("");
   const [profiledetails, setProfiledetails] = useState([]);
+
   const indexOfLastCard = currentPage * postPerPage;
   const indexOfFirstCard = indexOfLastCard - postPerPage;
 
-  const getProfiles = async () => {
-    try {
-      NProgress.start();
-      const { data } = await axios.get(
-        "https://api.enye.tech/v1/challenge/records"
-      );
-      NProgress.done();
-      toast.success("transaction profiles loaded successfully!");
-      setProfiles(data.records.profiles);
-    } catch (error) {
-      NProgress.done();
-      toast.error("something unexpected happen!!");
-    }
-  };
+  useEffect(() => {
+    const getProfiles = async () => {
+      try {
+        NProgress.start();
+        const { data } = await axios.get(
+          "https://api.enye.tech/v1/challenge/records"
+        );
+        NProgress.done();
+        toast.success("transaction profiles loaded successfully!");
+        setProfiles(data.records.profiles);
+      } catch (error) {
+        NProgress.done();
+        toast.error("something unexpected happen!!");
+      }
+    };
+    getProfiles();
+  }, []);
 
   useEffect(() => {
     let currentCard: any = profiles.slice(indexOfFirstCard, indexOfLastCard);
     setProfiledetails(currentCard);
-  }, [indexOfFirstCard, indexOfLastCard, profiles]);
+  }, [indexOfFirstCard, indexOfLastCard]);
 
   const handlefilterByCreditCardType = (
     e: React.ChangeEvent<HTMLInputElement>
