@@ -47,7 +47,7 @@ function App() {
   useEffect(() => {
     let currentCard: any = profiles.slice(indexOfFirstCard, indexOfLastCard);
     setProfiledetails(currentCard);
-  }, [indexOfFirstCard, indexOfLastCard]);
+  }, [indexOfFirstCard, indexOfLastCard, profiles]);
 
   const handlefilterByCreditCardType = (
     e: React.ChangeEvent<HTMLInputElement>
