@@ -49,19 +49,13 @@ export const searchFilter = (
   indexOfLastCard: number
 ) => {
   if (value) {
-    const newData: any = dat.filter(
-      (card: any) =>
-        card.FirstName.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.LastName.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.Gender.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.Email.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.PhoneNumber.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.URL.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.UserName.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.MacAddress.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-        card.LastLogin.toLowerCase().indexOf(value.toLowerCase()) !== -1
-    );
-    return setDat(newData);
+    const filteredData: ITransaction[] = dat.filter((item: any) => {
+      return Object.keys(item).some((key) =>
+        item[key].toString().toLowerCase().includes(value.toLowerCase())
+      );
+    });
+
+    return setDat(filteredData);
   } else {
     //@ts-ignore
     return setDat(profiles.slice(indexOfFirstCard, indexOfLastCard));

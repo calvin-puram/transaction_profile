@@ -123,12 +123,14 @@ function App() {
         />
       </div>
       <TransactionDetails profiles={profiledetails} />
-      <Pagination
-        totalCards={profiles.length}
-        postPerPage={postPerPage}
-        paginate={paginate}
-        activePage={activePage}
-      />
+      {profiledetails.length > 0 && (
+        <Pagination
+          totalCards={profiles.length}
+          postPerPage={postPerPage}
+          paginate={paginate}
+          activePage={activePage}
+        />
+      )}
     </div>
   );
 }

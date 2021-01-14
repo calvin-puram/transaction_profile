@@ -31,10 +31,6 @@ const TransactionCard: FC<CardProps> = (props) => {
         <h6 className="profile__name">{`${FirstName} ${LastName}`}</h6>
         <div className="personal__info">
           <div className="personal__info-item">
-            <p>Username: {UserName}</p>
-            <p>Email: {Email}</p>
-          </div>
-          <div className="personal__info-item">
             <p>Gender: {Gender}</p>
             <p>Phone: {PhoneNumber}</p>
           </div>
@@ -45,6 +41,12 @@ const TransactionCard: FC<CardProps> = (props) => {
           </div>
           <hr />
 
+          <p>
+            <span className="card__title">Email</span> : {Email}
+          </p>
+          <p>
+            <span className="card__title">Username</span> : {UserName}
+          </p>
           <p>
             <span className="card__title">LastLogin</span> : {LastLogin}
           </p>
