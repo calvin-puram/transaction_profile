@@ -61,7 +61,7 @@ a {
 .search__bar {
   font-style: normal;
   font-size: 1.6rem;
-  width: 40rem;
+  max-width: 40rem;
   border: 3px solid #72727c;
   margin: 0 0.5rem;
   display: inline-block;
@@ -81,5 +81,11 @@ a {
 @media screen and (max-width: 930px) {
   .search__input {
     margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search__input {
+    width: 100%;
   }
 }

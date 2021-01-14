@@ -123,7 +123,7 @@ function App() {
         />
       </div>
       <TransactionDetails profiles={profiledetails} />
-      {profiledetails.length > 0 && (
+      {profiledetails.length === 20 && (
         <Pagination
           totalCards={profiles.length}
           postPerPage={postPerPage}
