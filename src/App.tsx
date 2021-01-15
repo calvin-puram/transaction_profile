@@ -88,7 +88,7 @@ function App() {
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    setActivePage(pageNumber);
+    
   };
 
   return (
