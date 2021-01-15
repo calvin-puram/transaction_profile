@@ -8,7 +8,7 @@ type IPaginate = {
 
 const PaginationPage: FC<IPaginate> = (props) => {
   const { totalCards, postPerPage, paginate } = props;
-  const pageNumbers:[number] = [];
+  const pageNumbers:any = [];
 
   for (let i = 1; i <= Math.ceil(totalCards / postPerPage); i++) {
     pageNumbers.push(i);
