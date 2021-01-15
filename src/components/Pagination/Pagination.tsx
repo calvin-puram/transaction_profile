@@ -10,18 +10,23 @@ type IPaginate = {
 
 const PaginationPage: FC<IPaginate> = (props) => {
   const { totalCards, postPerPage, paginate, activePage } = props;
+  let pageNumbers: any = [];
+
+  for (let i = 1; i <= Math.ceil(totalCards / postPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <div className="pagination pagination-lg">
-      <Pagination
-        activePage={activePage}
-        itemsCountPerPage={postPerPage}
-        totalItemsCount={totalCards}
-        pageRangeDisplayed={5}
-        onChange={paginate}
-        itemClass="page-item"
-        linkClass="page-link"
-      />
+      {pageNumbers.map((page: number) => {
+        return (
+          <li className="page-item">
+            <a className="page-link" href="!#" onClick={() => paginate(page)}>
+              {page}
+            </a>
+          </li>
+        );
+      })}
     </div>
   );
 };

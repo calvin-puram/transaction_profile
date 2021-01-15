@@ -22,7 +22,13 @@ a {
 }
 
 .pagination {
-  margin: 2rem auto;
+  margin: 2rem auto !important;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  align-items: center;
+  justify-content: center;
 }
 
 #nprogress .bar {
