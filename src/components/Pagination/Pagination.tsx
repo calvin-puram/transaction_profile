@@ -19,7 +19,7 @@ const PaginationPage: FC<IPaginate> = (props) => {
       {pageNumbers.map((page: number) => {
         return (
           <li className="page-item">
-            <a onClick={() => paginate(number)} className="page-link" href="!#">
+            <a onClick={() => paginate(page)} className="page-link" href="!#">
               {page}
             </a>
           </li>
