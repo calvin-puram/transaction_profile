@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Pagination } from "react-bootstrap";
+import Pagination from "react-js-pagination";
 
 type IPaginate = {
   postPerPage: number;
@@ -10,23 +10,18 @@ type IPaginate = {
 
 const PaginationPage: FC<IPaginate> = (props) => {
   const { totalCards, postPerPage, paginate, activePage } = props;
-  let pageNumbers: any = [];
-
-  for (let i = 1; i <= Math.ceil(totalCards / postPerPage); i++) {
-    pageNumbers.push(
-      <Pagination.Item
-        key={i}
-        active={i === activePage}
-        onClick={() => paginate(i)}
-      >
-        {i}
-      </Pagination.Item>
-    );
-  }
 
   return (
     <div className="pagination pagination-lg">
-      <Pagination>{pageNumbers}</Pagination>
+      <Pagination
+        activePage={activePage}
+        itemsCountPerPage={postPerPage}
+        totalItemsCount={totalCards}
+        pageRangeDisplayed={5}
+        onChange={paginate}
+        itemClass="page-item"
+        linkClass="page-link"
+      />
     </div>
   );
 };
