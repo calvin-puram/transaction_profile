@@ -16,6 +16,7 @@ import {
 function App() {
   const [profiles, setProfiles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [activePage, setActivePage] = useState(1);
   const [postPerPage] = useState(20);
   const [filterByPaymentMethod, setFilterByPaymentMethod] = useState("");
   const [filterByGender, setfilterByGender] = useState("");
@@ -88,6 +89,7 @@ function App() {
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
+    setActivePage(pageNumber);
   };
 
   return (
@@ -126,6 +128,7 @@ function App() {
         totalCards={profiles.length}
         postPerPage={postPerPage}
         paginate={paginate}
+        activePage={activePage}
       />
     </div>
   );
