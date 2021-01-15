@@ -1,15 +1,13 @@
 import React, { FC } from "react";
-import Pagination from "react-js-pagination";
 
 type IPaginate = {
   postPerPage: number;
   totalCards: number;
-  activePage: number;
   paginate(pageNumber: number): void;
 };
 
 const PaginationPage: FC<IPaginate> = (props) => {
-  const { totalCards, postPerPage, paginate, activePage } = props;
+  const { totalCards, postPerPage, paginate } = props;
   let pageNumbers: any = [];
 
   for (let i = 1; i <= Math.ceil(totalCards / postPerPage); i++) {
