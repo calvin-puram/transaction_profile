@@ -90,7 +90,11 @@ function App() {
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     setActivePage(pageNumber);
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 600,
+      left: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
