@@ -33,6 +33,15 @@ a {
   justify-content: center;
 }
 
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+.page-link {
+  color: #333;
+}
 #nprogress .bar {
   background: #fff !important;
   position: fixed;

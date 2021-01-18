@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import "./TransactionCard.css";
 import { ITransaction } from "../../types";
+import { GoPrimitiveSquare } from "react-icons/go";
 
 interface CardProps {
   items: ITransaction;
@@ -41,39 +42,48 @@ const TransactionCard: FC<CardProps> = (props) => {
           </div>
           <hr />
 
-          <p>
-            <span className="card__title">Email</span> : {Email}
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">email:</span> {Email}
+          </p>
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">username:</span> {UserName}
+          </p>
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">lastLogin:</span> {LastLogin}
           </p>
           <p>
-            <span className="card__title">Username</span> : {UserName}
-          </p>
-          <p>
-            <span className="card__title">LastLogin</span> : {LastLogin}
-          </p>
-          <p>
-            <span className="card__title">PaymentMethod</span> : {PaymentMethod}
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">paymentMethod:</span> {PaymentMethod}
           </p>
 
-          <p>
-            <span className="card__title">CreditCardNumber</span>:{" "}
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">creditCardNumber:</span>{" "}
             {CreditCardNumber}
           </p>
-          <p>
-            <span className="card__title">CreditCardType</span>:{" "}
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">creditCardType:</span>{" "}
             {CreditCardType}
           </p>
 
-          <p>
-            <span className="card__title">DomainName</span>: {DomainName}
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">domainName:</span> {DomainName}
           </p>
-          <p>
-            <span className="card__title">URL</span>:{" "}
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">URL:</span>{" "}
             <a href={URL} target="_blank" rel="noreferrer">
               {URL}
             </a>
           </p>
-          <p>
-            <span className="card__title">MacAddress</span>: {MacAddress}
+          <p className="card__list">
+            <GoPrimitiveSquare className="icon" />
+            <span className="card__title">macAddress:</span> {MacAddress}
           </p>
         </div>
       </div>
